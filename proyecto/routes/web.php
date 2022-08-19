@@ -15,13 +15,19 @@ Route::get('/', function () {
 });
 
 Route::get('blog', function () {
-    return 'Listado de publicaciones';
+    //consulta base de datos nivel rutas 
+    $posts = [
+        ['id' =>1, 'title' => 'php',    'slug' => 'php'],
+        ['id' =>2, 'title' => 'Laravel',    'slug' => 'laravel']
+    ];
+    return view('blog', ['posts' => $posts]);
 });
 
 Route::get('blog/{slug}', function ($slug) {
-    //consulta base de datos
+    //consulta base de datos nivel rutas 
+    $post = $slug;
 
-    return $slug;
+    return view('post' , ['post' => $post]);
 });
 
 Route::get('buscar', function (Request $request) {
