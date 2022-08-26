@@ -12,7 +12,7 @@
         <a href="{{route('blog')}}">blog</a>
 
         @auth
-        <a href="{{route('dashboard') }}">Dashboard</a>   
+        <a href="{{route('dashboard') }}">Dashboard</a>
         @else
         <a href="{{route('login') }}">Login</a> 
         @endauth

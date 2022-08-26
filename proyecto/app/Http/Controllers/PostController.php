@@ -13,6 +13,16 @@ class PostController extends Controller
             'posts' => Post::latest()->paginate()
         ]);
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit',['post' => $post]);
+    }
     
     public function destroy(Post $post)
     {
